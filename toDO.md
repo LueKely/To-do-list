@@ -9,7 +9,7 @@
 
 ### BOTH JS AND UI:
 
-- outputing the stored json file to the site
+- [ ] outputing the stored json file to the site
 
 ### JS PART:
 
