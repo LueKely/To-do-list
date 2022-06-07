@@ -1,1 +1,13 @@
-
+{
+	"people": [
+		{ "name": "one", "age": 5 },
+		{
+			"name": "big",
+			"age": 2
+		},
+		{
+			"name": "testing",
+			"age": 3
+		}
+	]
+}
