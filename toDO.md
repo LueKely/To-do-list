@@ -2,10 +2,10 @@
 
 ### UI PART:
 
--  color theme
--  layout 
-- mobile view 
-- using a grid layout
+- [ ] color theme
+- [ ] layout 
+- [ ] mobile view 
+- [ ] using a grid layout
 
 ### BOTH JS AND UI:
 
