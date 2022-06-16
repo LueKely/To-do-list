@@ -1,0 +1,30 @@
+.checkbox {
+	display: inline-flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+.checkbox__input {
+	display: none;
+}
+
+.checkbox__box {
+	width: 2.5rem;
+	height: 2.5rem;
+	border: 2px solid #232946;
+	background-color: #fffffe;
+	border-radius: 3px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 10px;
+	flex-shrink: 0;
+}
+.checkbox__box::after {
+	content: '\2714';
+	font-size: 1.5rem;
+	color: #fffffe;
+}
+.checkbox__input:checked + .checkbox__box {
+	background: #d4939d;
+}

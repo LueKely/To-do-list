@@ -6,7 +6,7 @@
 	--card-text-color: #b8c1ec;
 	/* font */
 	--main-font: 'Fascinate Inline', cursive;
-	--body-font: 'Fascinate Inline', cursive;
+	--body-font: 'Caveat', cursive;
 }
 * {
 	margin: 0;
@@ -19,10 +19,7 @@ body {
 	height: 100vh;
 	width: 100vw;
 	background-color: var(--backgound-color);
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-	flex-direction: column;
+
 	flex-wrap: wrap;
 }
 h1 {
@@ -40,6 +37,7 @@ h1 {
 }
 
 .body {
+	width: 100vw;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -58,7 +56,7 @@ li {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	cursor: pointer;
+	cursor: default;
 }
 ul > li {
 	font-family: var(--body-font);
@@ -82,4 +80,38 @@ li:hover {
 }
 i.icon {
 	display: none;
+}
+
+/* checkBox */
+.checkbox {
+	display: inline-flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+.checkbox__input {
+	display: none;
+}
+
+.checkbox__box {
+	width: 2.5rem;
+	height: 2.5rem;
+	border: 2px solid #232946;
+	background-color: #fffffe;
+	border-radius: 3px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 10px;
+	flex-shrink: 0;
+	transition: background 100ms ease-in-out;
+}
+.checkbox__box::after {
+	content: '\2714';
+	font-size: 1.5rem;
+	color: #fffffe;
+}
+.checkbox__input:checked + .checkbox__box {
+	background: #d4939d;
+	transition: background 100ms ease-in-out;
 }
