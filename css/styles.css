@@ -58,6 +58,9 @@ li {
 	justify-content: space-between;
 	cursor: default;
 }
+p {
+	text-decoration: line-through;
+}
 ul > li {
 	font-family: var(--body-font);
 	color: var(--backgound-color);
