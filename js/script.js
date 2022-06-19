@@ -1,10 +1,19 @@
-const test = document.querySelector('.test');
-const test2 = document.querySelector('.test2');
+const listContainer = document.querySelector('.list-container');
 
+const inputs = {
+	counter: 0,
+	words: [],
+};
+const listInput = [];
+const finalInput = [];
 
-function jeo ()= 
+function lue(words) {
+	inputs.words[inputs.counter] = words;
+	inputs.counter++;
+}
 
-
+lue('this is 1');
+lue('this is 2');
 
 class listClass {
 	static count = 0;
@@ -32,9 +41,19 @@ class listClass {
 	}
 }
 
-const lue = new listClass('nigga');
-const kely = new listClass('joe');
-test.innerHTML = lue.makeList();
-lue.logCount();
-test2.innerHTML = kely.makeList();
-kely.logCount();
+inputs.words.forEach((input) => {
+	listInput.push(new listClass(input));
+});
+
+for (let a = 0; a < listInput.length; a++) {
+	finalInput[a] = document.createElement('li');
+	finalInput[a].innerHTML = listInput[a].makeList();
+}
+
+finalInput.forEach((a) => {
+	listContainer.appendChild(a);
+});
+
+// lue.logCount();
+// test2.innerHTML = kely.makeList();
+// kely.logCount();
