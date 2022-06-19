@@ -14,6 +14,7 @@ function lue(words) {
 
 lue('this is 1');
 lue('this is 2');
+lue('testing this is 3');
 
 class listClass {
 	static count = 0;
