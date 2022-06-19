@@ -1,4 +1,8 @@
 const listContainer = document.querySelector('.list-container');
+const listItem = document.querySelectorAll('.list-item');
+
+const formButton = document.getElementById('formButton');
+let globalCounter = 0;
 
 const inputs = {
 	counter: 0,
@@ -7,21 +11,17 @@ const inputs = {
 const listInput = [];
 const finalInput = [];
 
-function lue(words) {
+function transcribeNote(words) {
 	inputs.words[inputs.counter] = words;
 	inputs.counter++;
 }
 
-lue('this is 1');
-lue('this is 2');
-lue('testing this is 3');
-
-class listClass {
+class rendering {
 	static count = 0;
 
 	constructor(word) {
 		this.word = word;
-		this.count = listClass.count++;
+		this.count = rendering.count++;
 	}
 
 	makeList() {
@@ -37,24 +37,37 @@ class listClass {
 		<div class="checkbox__box"></div>
 	</label>`;
 	}
-	logCount() {
-		console.log(this.count);
-	}
 }
 
-inputs.words.forEach((input) => {
-	listInput.push(new listClass(input));
-});
-
-for (let a = 0; a < listInput.length; a++) {
-	finalInput[a] = document.createElement('li');
-	finalInput[a].innerHTML = listInput[a].makeList();
+function factory() {
+	listInput[globalCounter] = new rendering(inputs.words[globalCounter]);
+	finalInput[globalCounter] = document.createElement('li');
+	finalInput[globalCounter].innerHTML = listInput[globalCounter].makeList();
+	listContainer.appendChild(finalInput[globalCounter]);
+	globalCounter++;
 }
 
-finalInput.forEach((a) => {
-	listContainer.appendChild(a);
+formButton.addEventListener('click', () => {
+	let userInput = document.getElementById('userNoteId').value;
+	transcribeNote(userInput + ' ' + globalCounter);
+	console.log(userInput);
+	factory();
 });
 
 // lue.logCount();
 // test2.innerHTML = kely.makeList();
 // kely.logCount();
+// function factory() {
+// 	inputs.words.forEach((input) => {
+// 		listInput.push(new rendering(input));
+// 	});
+
+// 	for (let a = 0; a < listInput.length; a++) {
+// 		finalInput[a] = document.createElement('li');
+// 		finalInput[a].innerHTML = listInput[a].makeList();
+// 	}
+
+// 	finalInput.forEach((a) => {
+// 		listContainer.appendChild(a);
+// 	});
+// }
