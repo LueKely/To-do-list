@@ -19,79 +19,21 @@
 			<h1>TO DO LIST: &nbsp;</h1>
 		</div>
 
-		<form action="">
+		<form onsubmit="return false">
 			<input
 				type="text"
 				name="userNote"
 				id="userNoteId"
 				placeholder="Type some shit here"
+				maxlength="50"
 			/>
-			<input type="button" value="Make an item" id="formButton" />
+			<span id="formButton"
+				>&nbsp;<i class="fa-solid fa-circle-plus"></i>&nbsp;</span
+			>
 		</form>
 
 		<div class="body">
-			<ul class="list-container">
-				<!-- <li class="list-item">
-					Do the dishes
-					<label class="checkbox" for="myCheckboxId">
-						<input
-							class="checkbox__input"
-							type="checkbox"
-							name="myChecknoxName"
-							id="myCheckboxId"
-						/>
-						<div class="checkbox__box"></div>
-					</label>
-				</li>
-				<li class="list-item">
-					mow the lawn
-					<label class="checkbox" for="myCheckboxId1">
-						<input
-							class="checkbox__input"
-							type="checkbox"
-							name="myChecknoxName"
-							id="myCheckboxId1"
-						/>
-						<div class="checkbox__box"></div>
-					</label>
-				</li>
-				<li class="list-item">
-					<p>do the oinky spoinky &nbsp;</p>
-					<label class="checkbox" for="myCheckboxId2">
-						<input
-							class="checkbox__input"
-							type="checkbox"
-							name="myChecknoxName"
-							id="myCheckboxId2"
-						/>
-						<div class="checkbox__box"></div>
-					</label>
-				</li>
-				<li class="list-item">
-					spiin
-					<label class="checkbox" for="myCheckboxId3">
-						<input
-							class="checkbox__input"
-							type="checkbox"
-							name="myChecknoxName"
-							id="myCheckboxId3"
-						/>
-						<div class="checkbox__box"></div>
-					</label>
-				</li>
-				<li class="list-item">
-					Do the dishes
-					<label class="checkbox" for="myCheckboxId4">
-						<input
-							class="checkbox__input"
-							type="checkbox"
-							name="myChecknoxName"
-							id="myCheckboxId4"
-						/>
-						<div class="checkbox__box"></div>
-					</label>
-				</li> -->
-			</ul>
+			<ul class="list-container"></ul>
 		</div>
 		<div class="test"></div>
 		<div class="test2"></div>

@@ -44,6 +44,45 @@ h1 {
 	flex-direction: row;
 	margin-block: 50px;
 }
+form {
+	padding-block: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+input[type='text'] {
+	width: 50vw;
+	height: 50px;
+	font-family: var(--body-font);
+	font-size: 2rem;
+	border-radius: 15px 0px 0px 15px;
+	outline: none;
+	border: none;
+	padding-left: 10px;
+}
+
+#formButton {
+	height: 50px;
+	background-color: var(--card-text-color);
+	width: 50px;
+	display: flex;
+	color: var(--backgound-color);
+	font-size: 1rem;
+	border-radius: 0px 15px 15px 0px;
+	transition: color 100ms ease-in-out, background-color 100ms ease-in-out;
+}
+#formButton:hover {
+	background-color: var(--high-light-color);
+	color: var(--card-background);
+	transition: color 100ms ease-in-out, background-color 100ms ease-in-out;
+}
+#formButton:active {
+	transform: scale(0.95);
+}
+
+i {
+	margin: auto;
+}
 
 ul {
 	display: flex;

@@ -1,6 +1,6 @@
 const listContainer = document.querySelector('.list-container');
 const listItem = document.querySelectorAll('.list-item');
-
+let textbox;
 const formButton = document.getElementById('formButton');
 let globalCounter = 0;
 
@@ -39,6 +39,32 @@ class rendering {
 	}
 }
 
+textbox = document
+	.getElementById('userNoteId')
+	.addEventListener('keypress', (e) => {
+		if (e.keyCode == 13) {
+			let userInput = document.getElementById('userNoteId').value;
+			if (userInput == '') {
+				alert('Bobo mo magtype');
+			} else {
+				transcribeNote(userInput);
+				console.log(userInput);
+				factory();
+			}
+		}
+	});
+
+formButton.addEventListener('click', () => {
+	let userInput = document.getElementById('userNoteId').value;
+	if (userInput == '') {
+		alert('Bobo mo magtype');
+	} else {
+		transcribeNote(userInput);
+		console.log(userInput);
+		factory();
+	}
+});
+
 function factory() {
 	listInput[globalCounter] = new rendering(inputs.words[globalCounter]);
 	finalInput[globalCounter] = document.createElement('li');
@@ -46,28 +72,3 @@ function factory() {
 	listContainer.appendChild(finalInput[globalCounter]);
 	globalCounter++;
 }
-
-formButton.addEventListener('click', () => {
-	let userInput = document.getElementById('userNoteId').value;
-	transcribeNote(userInput + ' ' + globalCounter);
-	console.log(userInput);
-	factory();
-});
-
-// lue.logCount();
-// test2.innerHTML = kely.makeList();
-// kely.logCount();
-// function factory() {
-// 	inputs.words.forEach((input) => {
-// 		listInput.push(new rendering(input));
-// 	});
-
-// 	for (let a = 0; a < listInput.length; a++) {
-// 		finalInput[a] = document.createElement('li');
-// 		finalInput[a].innerHTML = listInput[a].makeList();
-// 	}
-
-// 	finalInput.forEach((a) => {
-// 		listContainer.appendChild(a);
-// 	});
-// }
