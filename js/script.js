@@ -10,6 +10,13 @@ const inputs = {
 };
 const listInput = [];
 const finalInput = [];
+const trashbin = document.querySelectorAll('.trashbin');
+
+trashbin.forEach((del) => {
+	del.addEventListener('click', () => {
+		alert('test');
+	});
+});
 
 function transcribeNote(words) {
 	inputs.words[inputs.counter] = words;
@@ -26,16 +33,19 @@ class rendering {
 
 	makeList() {
 		return `	<li class="list-item">
-	${this.word}
+
 	<label class="checkbox" for="myCheckboxId${this.count}">
 		<input
 			class="checkbox__input"
 			type="checkbox"
 			name="myChecknoxName"
 			id="myCheckboxId${this.count}"
-		/>
+		/>	
 		<div class="checkbox__box"></div>
-	</label>`;
+	</label>${this.word}
+	<span class="trashbin"><i class="fa-solid fa-trash-can"></i></span>
+	</li>
+	`;
 	}
 }
 

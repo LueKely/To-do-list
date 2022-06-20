@@ -94,7 +94,7 @@ li {
 	width: 50vw;
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: center;
 	cursor: default;
 }
 p {
@@ -108,20 +108,21 @@ ul > li {
 	margin-block: 5px;
 	padding: 10px 20px;
 }
+
+ul > li:last-child {
+	border-radius: 0px 0px 10px 10px;
+}
 ul > li:first-child {
 	border-radius: 10px 10px 0px 0px;
 }
-ul > li:last-child {
-	border-radius: 0px 0px 10px 10px;
+ul > li:only-child {
+	border-radius: 10px;
 }
 
 li:hover {
 	transition: background-color 100ms ease-in-out, color 100ms ease-in-out;
 	background-color: var(--card-background);
 	color: var(--high-light-color);
-}
-i.icon {
-	display: none;
 }
 
 /* checkBox */
@@ -156,4 +157,20 @@ i.icon {
 .checkbox__input:checked + .checkbox__box {
 	background: #d4939d;
 	transition: background 100ms ease-in-out;
+}
+
+.trashbin {
+	height: 50px;
+	margin-block: auto;
+	font-size: 1.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: color 100ms ease-in-out;
+	color: var(--backgound-color);
+	margin-left: auto;
+}
+.trashbin:hover {
+	transition: color 100ms ease-in-out;
+	color: var(--high-light-color);
 }

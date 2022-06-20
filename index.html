@@ -31,12 +31,23 @@
 				>&nbsp;<i class="fa-solid fa-circle-plus"></i>&nbsp;</span
 			>
 		</form>
-
+		<!-- list starts -->
 		<div class="body">
-			<ul class="list-container"></ul>
+			<ul class="list-container">
+				<li class="list-item">
+					<label class="checkbox" for="myCheckboxId${this.count}">
+						<input
+							class="checkbox__input"
+							type="checkbox"
+							name="myChecknoxName"
+							id="myCheckboxId${this.count}"
+						/>
+						<div class="checkbox__box"></div> </label
+					>${this.word}
+					<span class="trashbin"><i class="fa-solid fa-trash-can"></i></span>
+				</li>
+			</ul>
 		</div>
-		<div class="test"></div>
-		<div class="test2"></div>
 
 		<footer>
 			<div class="footer-items"></div>
