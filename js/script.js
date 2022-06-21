@@ -12,7 +12,11 @@ const inputs = {
 const listInput = [];
 const finalInput = [];
 const trashbin = document.querySelector('.trashbin');
-
+const errorHandler = document.querySelector('.errorHandlerModalContainer');
+const xmark = document.querySelector('.xmark');
+xmark.addEventListener('click', () => {
+	errorHandler.close();
+});
 function transcribeNote(words) {
 	inputs.words[inputs.counter] = words;
 	inputs.counter++;
@@ -47,7 +51,7 @@ textbox = document
 			let userInput = document.getElementById('userNoteId').value;
 
 			if (userInput == '') {
-				alert('Bobo mo magtype');
+				errorHandler.showModal();
 			} else {
 				transcribeNote(userInput);
 				console.log(userInput);
@@ -59,7 +63,7 @@ textbox = document
 formButton.addEventListener('click', () => {
 	let userInput = document.getElementById('userNoteId').value;
 	if (userInput == '') {
-		alert('Bobo mo magtype');
+		errorHandler.showModal();
 	} else {
 		transcribeNote(userInput);
 		console.log(userInput);
