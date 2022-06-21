@@ -43,6 +43,7 @@ h1 {
 	justify-content: center;
 	flex-direction: row;
 	margin-block: 50px;
+	position: relative;
 }
 form {
 	padding-block: 50px;
@@ -163,14 +164,18 @@ li:hover {
 	background-color: var(--card-text-color);
 	height: 50px;
 	width: 50px;
-	border-radius: 5px;
-	margin-block: auto;
+	border-radius: 40px;
+
 	font-size: 1.5rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	transition: color 100ms ease-in-out;
 	color: var(--backgound-color);
+	position: absolute;
+
+	top: 90%;
+	left: 95%;
 }
 .trashbin:hover {
 	transition: color 100ms ease-in-out;
