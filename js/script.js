@@ -1,6 +1,7 @@
 const listContainer = document.querySelector('.list-container');
 const listItem = document.querySelectorAll('.list-item');
 let textbox;
+
 const formButton = document.getElementById('formButton');
 let globalCounter = 0;
 
@@ -10,13 +11,7 @@ const inputs = {
 };
 const listInput = [];
 const finalInput = [];
-const trashbin = document.querySelectorAll('.trashbin');
-
-trashbin.forEach((del) => {
-	del.addEventListener('click', () => {
-		alert('test');
-	});
-});
+const trashbin = document.querySelector('.trashbin');
 
 function transcribeNote(words) {
 	inputs.words[inputs.counter] = words;
@@ -32,19 +27,15 @@ class rendering {
 	}
 
 	makeList() {
-		return `	<li class="list-item">
-
-	<label class="checkbox" for="myCheckboxId${this.count}">
+		return `		<label class="checkbox" for="myCheckboxId${this.count}">
 		<input
 			class="checkbox__input"
 			type="checkbox"
 			name="myChecknoxName"
 			id="myCheckboxId${this.count}"
-		/>	
-		<div class="checkbox__box"></div>
-	</label>${this.word}
-	<span class="trashbin"><i class="fa-solid fa-trash-can"></i></span>
-	</li>
+		/>
+		<div class="checkbox__box"></div> </label
+	>${this.word}
 	`;
 	}
 }
@@ -54,6 +45,7 @@ textbox = document
 	.addEventListener('keypress', (e) => {
 		if (e.keyCode == 13) {
 			let userInput = document.getElementById('userNoteId').value;
+
 			if (userInput == '') {
 				alert('Bobo mo magtype');
 			} else {
@@ -79,6 +71,20 @@ function factory() {
 	listInput[globalCounter] = new rendering(inputs.words[globalCounter]);
 	finalInput[globalCounter] = document.createElement('li');
 	finalInput[globalCounter].innerHTML = listInput[globalCounter].makeList();
+
 	listContainer.appendChild(finalInput[globalCounter]);
 	globalCounter++;
+	document.getElementById('userNoteId').value = '';
+}
+
+trashbin.addEventListener('click', () => {
+	let index = prompt('insert what index to delete');
+	deleteItem(index);
+});
+
+function deleteItem(index) {
+	inputs.words.splice(index, 1);
+	listInput.splice(index, 1);
+	finalInput.splice(index, 1);
+	listContainer.removeChild(listContainer.children[index]);
 }

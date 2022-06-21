@@ -94,7 +94,7 @@ li {
 	width: 50vw;
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-start;
 	cursor: default;
 }
 p {
@@ -160,7 +160,10 @@ li:hover {
 }
 
 .trashbin {
+	background-color: var(--card-text-color);
 	height: 50px;
+	width: 50px;
+	border-radius: 5px;
 	margin-block: auto;
 	font-size: 1.5rem;
 	display: flex;
@@ -168,7 +171,6 @@ li:hover {
 	justify-content: center;
 	transition: color 100ms ease-in-out;
 	color: var(--backgound-color);
-	margin-left: auto;
 }
 .trashbin:hover {
 	transition: color 100ms ease-in-out;
