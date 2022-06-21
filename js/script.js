@@ -1,5 +1,8 @@
 const listContainer = document.querySelector('.list-container');
 const listItem = document.querySelectorAll('.list-item');
+
+const li = document.querySelectorAll('li');
+
 let textbox;
 
 const formButton = document.getElementById('formButton');
@@ -31,7 +34,7 @@ class rendering {
 	}
 
 	makeList() {
-		return `		<label class="checkbox" for="myCheckboxId${this.count}">
+		return `	<label class="checkbox " for="myCheckboxId${this.count}">
 		<input
 			class="checkbox__input"
 			type="checkbox"
@@ -39,7 +42,7 @@ class rendering {
 			id="myCheckboxId${this.count}"
 		/>
 		<div class="checkbox__box"></div> </label
-	>${this.word}
+	>${this.word} 
 	`;
 	}
 }
@@ -75,10 +78,14 @@ function factory() {
 	listInput[globalCounter] = new rendering(inputs.words[globalCounter]);
 	finalInput[globalCounter] = document.createElement('li');
 	finalInput[globalCounter].innerHTML = listInput[globalCounter].makeList();
+	finalInput[globalCounter].classList.add('animate__animated');
+	finalInput[globalCounter].classList.add('animate__backInLeft');
 
 	listContainer.appendChild(finalInput[globalCounter]);
 	globalCounter++;
 	document.getElementById('userNoteId').value = '';
+
+	//add css animaiton to li
 }
 
 trashbin.addEventListener('click', () => {
