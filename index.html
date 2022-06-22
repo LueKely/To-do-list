@@ -23,6 +23,7 @@
 			<h1>TO DO LIST: &nbsp;</h1>
 		</div>
 
+		<!-- textbox to add list -->
 		<form onsubmit="return false">
 			<input
 				type="text"
@@ -36,6 +37,7 @@
 			>
 		</form>
 
+		<!-- when user returns empty string -->
 		<dialog
 			class="errorHandlerModalContainer animate__animated animate__headShake"
 		>
@@ -62,6 +64,16 @@
 			</ul>
 		</div>
 		<span class="trashbin"><i class="fa-solid fa-trash-can"></i></span>
+
+		<!-- modal for closing the dialog -->
+		<dialog class="deleteOption">
+			<form onsubmit="return false" class="deleteOptionContainer">
+				<i class="fa-solid fa-circle-xmark xmark">&nbsp;</i>
+				<input type="text" name="" id="" />
+				<input type="button" value="" class="" />
+			</form>
+		</dialog>
+
 		<footer>
 			<div class="footer-items"></div>
 		</footer>
