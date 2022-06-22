@@ -227,3 +227,63 @@ li:hover {
 	transition: color 100ms ease-in-out;
 	color: var(--high-light-color);
 }
+
+/* trashbin modal */
+.deleteOption {
+	margin: auto;
+	border: none;
+	border-radius: 25px;
+
+	background-color: var(--card-text-color);
+	width: 60vw;
+}
+.deleteOptionContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	margin: auto;
+	padding: 0;
+}
+.deleteOptionContainer p {
+	font-size: 1.5rem;
+	margin-bottom: 10px;
+}
+
+.deleteCloseBtn {
+	align-self: flex-end;
+	margin: 15px 15px 15px 15px;
+}
+.deleteCloseBtn > .xmark {
+	margin: 0;
+}
+.deleteOptionItem {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 40px;
+}
+.deleteOptionButton {
+	height: 50px;
+	width: 50px;
+	border-radius: 0px 15px 15px 0px;
+	font-size: 1.2rem;
+	color: var(--card-background);
+	background-color: var(--backgound-color);
+	border: none;
+	transition: background-color 250ms ease-in-out;
+}
+.deleteOptionButton:hover {
+	background-color: var(--high-light-color);
+	transition: background-color 250ms ease-in-out;
+}
+.deleteOptionButton i {
+	margin-right: 10px;
+}
+.deleteOptionButton:active {
+	transform: scale(0.95);
+}
+.deleteOption::backdrop {
+	background-color: #151829;
+	opacity: 0.4;
+}

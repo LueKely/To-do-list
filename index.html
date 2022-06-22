@@ -49,28 +49,34 @@
 
 		<!-- list starts -->
 		<div class="body">
-			<ul class="list-container">
-				<!-- <li class="list-item">
-					<label class="checkbox" for="myCheckboxId${this.count}">
-						<input
-							class="checkbox__input"
-							type="checkbox"
-							name="myChecknoxName"
-							id="myCheckboxId${this.count}"
-						/>
-						<div class="checkbox__box"></div> </label
-					>${this.word}
-				</li> -->
-			</ul>
+			<ul class="list-container"></ul>
 		</div>
+
+		<!-- button trashcan -->
 		<span class="trashbin"><i class="fa-solid fa-trash-can"></i></span>
 
 		<!-- modal for closing the dialog -->
 		<dialog class="deleteOption">
 			<form onsubmit="return false" class="deleteOptionContainer">
-				<i class="fa-solid fa-circle-xmark xmark">&nbsp;</i>
-				<input type="text" name="" id="" />
-				<input type="button" value="" class="" />
+				<div class="deleteCloseBtn">
+					&nbsp;<i class="fa-solid fa-circle-xmark xmark pt2"></i>&nbsp;
+				</div>
+				<p>
+					Type the number of the list you want to delete or "all" to clear the
+					current list. &nbsp;
+				</p>
+				<div class="deleteOptionItem">
+					<input
+						type="text"
+						name=""
+						id="indexForDeletion"
+						maxlength="50"
+						placeholder="please type the number"
+					/>
+					<button class="deleteOptionButton">
+						<i class="fa-solid fa-paper-plane"></i>
+					</button>
+				</div>
 			</form>
 		</dialog>
 

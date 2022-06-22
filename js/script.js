@@ -8,18 +8,25 @@ let textbox;
 const formButton = document.getElementById('formButton');
 let globalCounter = 0;
 
-const inputs = {
+let inputs = {
 	counter: 0,
 	words: [],
 };
-const listInput = [];
-const finalInput = [];
+let listInput = [];
+let finalInput = [];
 const trashbin = document.querySelector('.trashbin');
 const errorHandler = document.querySelector('.errorHandlerModalContainer');
 const xmark = document.querySelector('.xmark');
 xmark.addEventListener('click', () => {
 	errorHandler.close();
 });
+const deleteOption = document.querySelector('.deleteOption');
+const pt2 = document.querySelector('.pt2').addEventListener('click', () => {
+	deleteOption.close();
+	document.getElementById('indexForDeletion').value = '';
+});
+const deleteOptionButton = document.querySelector('.deleteOptionButton');
+
 function transcribeNote(words) {
 	inputs.words[inputs.counter] = words;
 	inputs.counter++;
@@ -65,6 +72,7 @@ textbox = document
 
 formButton.addEventListener('click', () => {
 	let userInput = document.getElementById('userNoteId').value;
+
 	if (userInput == '') {
 		errorHandler.showModal();
 	} else {
@@ -89,8 +97,7 @@ function factory() {
 }
 
 trashbin.addEventListener('click', () => {
-	let index = prompt('insert what index to delete');
-	deleteItem(index);
+	deleteOption.showModal();
 });
 
 function deleteItem(index) {
@@ -98,4 +105,32 @@ function deleteItem(index) {
 	listInput.splice(index, 1);
 	finalInput.splice(index, 1);
 	listContainer.removeChild(listContainer.children[index]);
+	inputs.counter--;
+	globalCounter--;
 }
+
+function deleteAllItems() {
+	let deleteCounter = globalCounter;
+
+	for (let index = 0; index < deleteCounter; index++) {
+		inputs.words.splice(0, 1);
+		listInput.splice(0, 1);
+		finalInput.splice(0, 1);
+		listContainer.removeChild(listContainer.children[0]);
+		inputs.counter--;
+		globalCounter--;
+	}
+}
+
+deleteOptionButton.addEventListener('click', () => {
+	let indexForDeletion = document.getElementById('indexForDeletion').value;
+
+	if (String(indexForDeletion).toLowerCase() == 'all') {
+		deleteAllItems();
+	} else if (indexForDeletion == '') {
+		errorHandler.showModal();
+	} else {
+		deleteItem(indexForDeletion);
+	}
+	document.getElementById('indexForDeletion').value = '';
+});
