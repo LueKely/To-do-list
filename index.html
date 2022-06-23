@@ -29,7 +29,7 @@
 				type="text"
 				name="userNote"
 				id="userNoteId"
-				placeholder="Type some shit here"
+				placeholder="Type here!"
 				maxlength="50"
 			/>
 			<span id="formButton"
@@ -47,6 +47,27 @@
 			</div>
 		</dialog>
 
+		<!-- when the user returns an index out of bounds -->
+
+		<dialog
+			class="errorHandlerModalContainer animate__animated animate__headShake"
+		>
+			<div class="errorHandlerModal">
+				<i class="fa-solid fa-circle-xmark xmark">&nbsp;</i>
+				<p>Index Out of Bounds&nbsp;</p>
+			</div>
+		</dialog>
+
+		<!-- when the user inputs anything but the commands given -->
+		<dialog
+			class="errorHandlerModalContainer animate__animated animate__headShake"
+		>
+			<div class="errorHandlerModal">
+				<i class="fa-solid fa-circle-xmark xmark">&nbsp;</i>
+				<p>Please Insert Number&nbsp;</p>
+			</div>
+		</dialog>
+
 		<!-- list starts -->
 		<div class="body">
 			<ul class="list-container"></ul>
@@ -56,7 +77,7 @@
 		<span class="trashbin"><i class="fa-solid fa-trash-can"></i></span>
 
 		<!-- modal for closing the dialog -->
-		<dialog class="deleteOption">
+		<dialog class="deleteOption animate__animated animate__jackInTheBox">
 			<form onsubmit="return false" class="deleteOptionContainer">
 				<div class="deleteCloseBtn">
 					&nbsp;<i class="fa-solid fa-circle-xmark xmark pt2"></i>&nbsp;
@@ -67,11 +88,13 @@
 				</p>
 				<div class="deleteOptionItem">
 					<input
+						class="deleteText"
 						type="text"
 						name=""
 						id="indexForDeletion"
 						maxlength="50"
 						placeholder="please type the number"
+						width="50px"
 					/>
 					<button class="deleteOptionButton">
 						<i class="fa-solid fa-paper-plane"></i>

@@ -129,8 +129,15 @@ deleteOptionButton.addEventListener('click', () => {
 		deleteAllItems();
 	} else if (indexForDeletion == '') {
 		errorHandler.showModal();
+	} else if (indexForDeletion > globalCounter) {
+		alert('error no index found');
+	} else if (
+		isNaN(indexForDeletion) &&
+		String(indexForDeletion).toLowerCase() != 'all'
+	) {
+		alert('test');
 	} else {
-		deleteItem(indexForDeletion);
+		deleteItem(indexForDeletion - 1);
 	}
 	document.getElementById('indexForDeletion').value = '';
 });

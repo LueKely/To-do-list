@@ -235,7 +235,7 @@ li:hover {
 	border-radius: 25px;
 
 	background-color: var(--card-text-color);
-	width: 60vw;
+	width: 30vw;
 }
 .deleteOptionContainer {
 	display: flex;
@@ -246,8 +246,10 @@ li:hover {
 	padding: 0;
 }
 .deleteOptionContainer p {
-	font-size: 1.5rem;
+	font-size: 1.6rem;
 	margin-bottom: 10px;
+	margin-inline: 40px;
+	text-align: center;
 }
 
 .deleteCloseBtn {
@@ -262,6 +264,9 @@ li:hover {
 	align-items: center;
 	justify-content: center;
 	margin-bottom: 40px;
+}
+input[type='text'].deleteText {
+	width: 20vw;
 }
 .deleteOptionButton {
 	height: 50px;
