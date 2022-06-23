@@ -1,5 +1,4 @@
 const listContainer = document.querySelector('.list-container');
-const listItem = document.querySelectorAll('.list-item');
 
 const li = document.querySelectorAll('li');
 
@@ -145,3 +144,11 @@ for (let index = 0; index < xmark.length; index++) {
 		errorHandler[index].close();
 	});
 }
+
+listContainer.addEventListener('change', (e) => {
+	if (e.target.checked) {
+		e.target.parentElement.parentElement.classList.add('highLights');
+	} else {
+		e.target.parentElement.parentElement.classList.remove('highLights');
+	}
+});

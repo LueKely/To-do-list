@@ -143,6 +143,7 @@ li {
 	align-items: center;
 	justify-content: flex-start;
 	cursor: default;
+	transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
 }
 p {
 	font-family: var(--body-font);
@@ -164,12 +165,6 @@ ul > li:first-child {
 }
 ul > li:only-child {
 	border-radius: 10px;
-}
-
-li:hover {
-	transition: background-color 100ms ease-in-out, color 100ms ease-in-out;
-	background-color: var(--card-background);
-	color: var(--high-light-color);
 }
 
 /* checkBox */
@@ -291,4 +286,10 @@ input[type='text'].deleteText {
 .deleteOption::backdrop {
 	background-color: #151829;
 	opacity: 0.4;
+}
+
+li.highLights {
+	background-color: var(--card-background);
+	color: var(--high-light-color);
+	transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
 }
