@@ -15,11 +15,9 @@ let inputs = {
 let listInput = [];
 let finalInput = [];
 const trashbin = document.querySelector('.trashbin');
-const errorHandler = document.querySelector('.errorHandlerModalContainer');
-const xmark = document.querySelector('.xmark');
-xmark.addEventListener('click', () => {
-	errorHandler.close();
-});
+const errorHandler = document.querySelectorAll('.errorHandlerModalContainer');
+const xmark = document.querySelectorAll('.xmark');
+
 const deleteOption = document.querySelector('.deleteOption');
 const pt2 = document.querySelector('.pt2').addEventListener('click', () => {
 	deleteOption.close();
@@ -61,7 +59,7 @@ textbox = document
 			let userInput = document.getElementById('userNoteId').value;
 
 			if (userInput == '') {
-				errorHandler.showModal();
+				errorHandler[0].showModal();
 			} else {
 				transcribeNote(userInput);
 				console.log(userInput);
@@ -74,7 +72,7 @@ formButton.addEventListener('click', () => {
 	let userInput = document.getElementById('userNoteId').value;
 
 	if (userInput == '') {
-		errorHandler.showModal();
+		errorHandler[0].showModal();
 	} else {
 		transcribeNote(userInput);
 		console.log(userInput);
@@ -128,16 +126,22 @@ deleteOptionButton.addEventListener('click', () => {
 	if (String(indexForDeletion).toLowerCase() == 'all') {
 		deleteAllItems();
 	} else if (indexForDeletion == '') {
-		errorHandler.showModal();
+		errorHandler[0].showModal();
 	} else if (indexForDeletion > globalCounter) {
-		alert('error no index found');
+		errorHandler[1].showModal();
 	} else if (
 		isNaN(indexForDeletion) &&
 		String(indexForDeletion).toLowerCase() != 'all'
 	) {
-		alert('test');
+		errorHandler[2].showModal();
 	} else {
 		deleteItem(indexForDeletion - 1);
 	}
 	document.getElementById('indexForDeletion').value = '';
 });
+
+for (let index = 0; index < xmark.length; index++) {
+	xmark[index].addEventListener('click', () => {
+		errorHandler[index].close();
+	});
+}
