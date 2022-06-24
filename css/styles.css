@@ -293,3 +293,7 @@ li.highLights {
 	color: var(--high-light-color);
 	transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
 }
+li.highLights p {
+	transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
+	text-decoration: line-through;
+}

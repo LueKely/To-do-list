@@ -46,7 +46,7 @@ class rendering {
 			id="myCheckboxId${this.count}"
 		/>
 		<div class="checkbox__box"></div> </label
-	>${this.word} 
+	>   <p> &nbsp${this.word} &nbsp;</p> 
 	`;
 	}
 }
@@ -127,6 +127,8 @@ deleteOptionButton.addEventListener('click', () => {
 	} else if (indexForDeletion == '') {
 		errorHandler[0].showModal();
 	} else if (indexForDeletion > globalCounter) {
+		errorHandler[1].showModal();
+	} else if (indexForDeletion == 0) {
 		errorHandler[1].showModal();
 	} else if (
 		isNaN(indexForDeletion) &&
