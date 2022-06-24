@@ -6,7 +6,7 @@
 	--card-text-color: #b8c1ec;
 	/* font */
 	--main-font: 'Fascinate Inline', cursive;
-	--body-font: 'Fascinate Inline', cursive;
+	--body-font: 'Caveat', cursive;
 }
 * {
 	margin: 0;
@@ -19,10 +19,7 @@ body {
 	height: 100vh;
 	width: 100vw;
 	background-color: var(--backgound-color);
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-	flex-direction: column;
+
 	flex-wrap: wrap;
 }
 h1 {
@@ -40,11 +37,98 @@ h1 {
 }
 
 .body {
+	width: 100vw;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: row;
 	margin-block: 50px;
+	position: relative;
+}
+form {
+	padding-block: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+input[type='text'] {
+	width: 50vw;
+	height: 50px;
+	font-family: var(--body-font);
+	font-size: 2rem;
+	border-radius: 15px 0px 0px 15px;
+	outline: none;
+	border: none;
+	padding-left: 10px;
+}
+
+/* modal for textbox starts */
+.errorHandlerModalContainer {
+	border: none;
+	background-color: #b8c1ec;
+	border-radius: 10px;
+	margin: auto;
+}
+.errorHandlerModalContainer::backdrop {
+	background: #151829;
+
+	opacity: 0.4;
+}
+.errorHandlerModal {
+	margin: auto;
+	width: 30vw;
+	height: 150px;
+	background-color: #b8c1ec;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: column;
+	border-radius: 10px;
+	border: none;
+}
+.xmark {
+	align-self: flex-end;
+	margin: 10px 5px 10px 15px;
+	color: var(--backgound-color);
+	font-size: 1.5rem;
+	transition: color 250ms ease-in-out;
+	cursor: pointer;
+}
+.xmark:hover {
+	color: var(--card-background);
+	transition: color 250ms ease-in-out;
+}
+.xmark:active {
+	transform: scale(0.95);
+}
+.errorHandlerModal p {
+	font-size: 2rem;
+	justify-self: center;
+	margin-top: 10px;
+	color: var(--backgound-color);
+	cursor: default;
+}
+#formButton {
+	height: 50px;
+	background-color: var(--card-text-color);
+	width: 50px;
+	display: flex;
+	color: var(--backgound-color);
+	font-size: 1rem;
+	border-radius: 0px 15px 15px 0px;
+	transition: color 100ms ease-in-out, background-color 100ms ease-in-out;
+}
+#formButton:hover {
+	background-color: var(--high-light-color);
+	color: var(--card-background);
+	transition: color 100ms ease-in-out, background-color 100ms ease-in-out;
+}
+#formButton:active {
+	transform: scale(0.95);
+}
+
+i {
+	margin: auto;
 }
 
 ul {
@@ -57,8 +141,12 @@ li {
 	width: 50vw;
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
-	cursor: pointer;
+	justify-content: flex-start;
+	cursor: default;
+	transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
+}
+p {
+	font-family: var(--body-font);
 }
 ul > li {
 	font-family: var(--body-font);
@@ -68,18 +156,144 @@ ul > li {
 	margin-block: 5px;
 	padding: 10px 20px;
 }
-ul > li:first-child {
-	border-radius: 10px 10px 0px 0px;
-}
+
 ul > li:last-child {
 	border-radius: 0px 0px 10px 10px;
 }
+ul > li:first-child {
+	border-radius: 10px 10px 0px 0px;
+}
+ul > li:only-child {
+	border-radius: 10px;
+}
 
-li:hover {
-	transition: background-color 100ms ease-in-out, color 100ms ease-in-out;
-	background-color: var(--card-background);
+/* checkBox */
+.checkbox {
+	display: inline-flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+.checkbox__input {
+	display: none;
+}
+
+.checkbox__box {
+	width: 2.5rem;
+	height: 2.5rem;
+	border: 2px solid #232946;
+	background-color: #fffffe;
+	border-radius: 3px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 10px;
+	flex-shrink: 0;
+	transition: background 100ms ease-in-out;
+}
+.checkbox__box::after {
+	content: '\2714';
+	font-size: 1.5rem;
+	color: #fffffe;
+}
+.checkbox__input:checked + .checkbox__box {
+	background: #d4939d;
+	transition: background 100ms ease-in-out;
+}
+
+.trashbin {
+	background-color: var(--card-text-color);
+	height: 50px;
+	width: 50px;
+	border-radius: 40px;
+
+	font-size: 1.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: color 100ms ease-in-out;
+	color: var(--backgound-color);
+	position: absolute;
+
+	top: 90%;
+	left: 95%;
+}
+.trashbin:hover {
+	transition: color 100ms ease-in-out;
 	color: var(--high-light-color);
 }
-i.icon {
-	display: none;
+
+/* trashbin modal */
+.deleteOption {
+	margin: auto;
+	border: none;
+	border-radius: 25px;
+
+	background-color: var(--card-text-color);
+	width: 30vw;
+}
+.deleteOptionContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	margin: auto;
+	padding: 0;
+}
+.deleteOptionContainer p {
+	font-size: 1.6rem;
+	margin-bottom: 10px;
+	margin-inline: 40px;
+	text-align: center;
+}
+
+.deleteCloseBtn {
+	align-self: flex-end;
+	margin: 15px 15px 15px 15px;
+}
+.deleteCloseBtn > .xmark {
+	margin: 0;
+}
+.deleteOptionItem {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 40px;
+}
+input[type='text'].deleteText {
+	width: 20vw;
+}
+.deleteOptionButton {
+	height: 50px;
+	width: 50px;
+	border-radius: 0px 15px 15px 0px;
+	font-size: 1.2rem;
+	color: var(--card-background);
+	background-color: var(--backgound-color);
+	border: none;
+	transition: background-color 250ms ease-in-out;
+}
+.deleteOptionButton:hover {
+	background-color: var(--high-light-color);
+	transition: background-color 250ms ease-in-out;
+}
+.deleteOptionButton i {
+	margin-right: 10px;
+}
+.deleteOptionButton:active {
+	transform: scale(0.95);
+}
+.deleteOption::backdrop {
+	background-color: #151829;
+	opacity: 0.4;
+}
+
+li.highLights {
+	background-color: var(--card-background);
+	color: var(--high-light-color);
+	transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
+}
+li.highLights p {
+	transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
+	text-decoration: line-through;
 }

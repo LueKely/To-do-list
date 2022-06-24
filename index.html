@@ -12,6 +12,10 @@
 			rel="stylesheet"
 		/>
 		<link rel="stylesheet" href="./css/styles.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+		/>
 		<title>To Do List</title>
 	</head>
 	<body>
@@ -19,36 +23,85 @@
 			<h1>TO DO LIST: &nbsp;</h1>
 		</div>
 
+		<!-- textbox to add list -->
+		<form onsubmit="return false">
+			<input
+				type="text"
+				name="userNote"
+				id="userNoteId"
+				placeholder="Type here!"
+				maxlength="50"
+			/>
+			<span id="formButton"
+				>&nbsp;<i class="fa-solid fa-circle-plus"></i>&nbsp;</span
+			>
+		</form>
+
+		<!-- when user returns empty string -->
+		<dialog
+			class="errorHandlerModalContainer animate__animated animate__headShake"
+		>
+			<div class="errorHandlerModal">
+				<i class="fa-solid fa-circle-xmark xmark">&nbsp;</i>
+				<p>Input is Empty!&nbsp;</p>
+			</div>
+		</dialog>
+
+		<!-- when the user returns an index out of bounds -->
+
+		<dialog
+			class="errorHandlerModalContainer animate__animated animate__headShake"
+		>
+			<div class="errorHandlerModal">
+				<i class="fa-solid fa-circle-xmark xmark">&nbsp;</i>
+				<p>Index Out of Bounds&nbsp;</p>
+			</div>
+		</dialog>
+
+		<!-- when the user inputs anything but the commands given -->
+		<dialog
+			class="errorHandlerModalContainer animate__animated animate__headShake"
+		>
+			<div class="errorHandlerModal">
+				<i class="fa-solid fa-circle-xmark xmark">&nbsp;</i>
+				<p>Please Insert Number&nbsp;</p>
+			</div>
+		</dialog>
+
+		<!-- list starts -->
 		<div class="body">
-			<ul class="list-container">
-				<li class="list-item">
-					Do the dishes <span><i class="icon fa-solid fa-trash"></i></span>
-				</li>
-				<li class="list-item">
-					mow the lawn <span><i class="icon fa-solid fa-trash"></i></span>
-				</li>
-				<li class="list-item">
-					do the oinky spoinky
-					<span><i class="icon fa-solid fa-trash"></i></span>
-				</li>
-				<li class="list-item">
-					spiin <span><i class="icon fa-solid fa-trash"></i></span>
-				</li>
-				<li class="list-item">
-					Do the dishes <span><i class="icon fa-solid fa-trash"></i></span>
-				</li>
-				<li class="list-item">
-					mow the lawn <span><i class="icon fa-solid fa-trash"></i></span>
-				</li>
-				<li class="list-item">
-					do the oinky spoinky
-					<span><i class="icon fa-solid fa-trash"></i></span>
-				</li>
-				<li class="list-item">
-					spiin <span><i class="icon fa-solid fa-trash"></i></span>
-				</li>
-			</ul>
+			<ul class="list-container"></ul>
 		</div>
+
+		<!-- button trashcan -->
+		<span class="trashbin"><i class="fa-solid fa-trash-can"></i></span>
+
+		<!-- modal for closing the dialog -->
+		<dialog class="deleteOption animate__animated animate__jackInTheBox">
+			<form onsubmit="return false" class="deleteOptionContainer">
+				<div class="deleteCloseBtn">
+					&nbsp;<i class="fa-solid fa-circle-xmark xmark pt2"></i>&nbsp;
+				</div>
+				<p>
+					Type the number of the list you want to delete or "all" to clear the
+					current list. &nbsp;
+				</p>
+				<div class="deleteOptionItem">
+					<input
+						class="deleteText"
+						type="text"
+						name=""
+						id="indexForDeletion"
+						maxlength="50"
+						placeholder="please type the number"
+						width="50px"
+					/>
+					<button class="deleteOptionButton">
+						<i class="fa-solid fa-paper-plane"></i>
+					</button>
+				</div>
+			</form>
+		</dialog>
 
 		<footer>
 			<div class="footer-items"></div>
