@@ -27,13 +27,36 @@ h1 {
 	font-family: var(--main-font);
 	text-align: center;
 	font-size: 5rem;
-	text-shadow: 10px 5px var(--high-light-color);
 }
 
 .head {
+	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+}
+.head::before {
+	content: '';
+	position: absolute;
+	width: 570px;
+	height: 4px;
+	border-radius: 5px;
+	background-color: var(--high-light-color);
+	bottom: 50px;
+	right: 31%;
+}
+
+.head h1::after {
+	content: ' ';
+	width: 100px;
+	height: 50px;
+	background-color: var(--high-light-color);
+}
+.head p {
+	color: var(--card-text-color);
+	font-size: 2rem;
 }
 
 .body {
@@ -202,6 +225,7 @@ ul > li:only-child {
 }
 
 .trashbin {
+	position: absolute;
 	background-color: var(--card-text-color);
 	height: 50px;
 	width: 50px;
@@ -213,15 +237,24 @@ ul > li:only-child {
 	justify-content: center;
 	transition: color 100ms ease-in-out;
 	color: var(--backgound-color);
-	position: absolute;
 
 	top: 90%;
 	left: 95%;
+	/* margin-top: 20vh;
+	margin-left: auto; */
 }
 .trashbin:hover {
-	transition: color 100ms ease-in-out;
+	transition: color 100ms ease-in-out, background-color 100ms ease-in-out;
 	color: var(--high-light-color);
+	background-color: var(--card-background);
 }
+
+/* .trashbin:hover::before {
+	position: absolute;
+	content: 'Delete';
+	font-family: var(--body-font);
+	font-size: 1rem;
+} */
 
 /* trashbin modal */
 .deleteOption {
@@ -296,4 +329,33 @@ li.highLights {
 li.highLights p {
 	transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
 	text-decoration: line-through;
+}
+
+footer {
+	height: 50px;
+	width: 100vw;
+
+	font-size: 1.7rem;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: auto;
+}
+
+a {
+	text-decoration: none;
+	transition: transform 250ms ease-in-out;
+}
+a i {
+	color: var(--card-text-color);
+	transition: color 250ms ease-in-out;
+}
+a i:hover {
+	color: var(--high-light-color);
+	transition: color 250ms ease-in-out;
+}
+a i:active {
+	transform: scale(0.95);
+	transition: transform 250ms ease-in-out;
 }
