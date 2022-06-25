@@ -37,21 +37,12 @@ h1 {
 	flex-direction: column;
 	text-align: center;
 }
-.head::before {
-	content: '';
-	position: absolute;
-	width: 570px;
-	height: 4px;
+.underLine {
 	border-radius: 5px;
-	background-color: var(--high-light-color);
-	bottom: 50px;
-	right: 31%;
-}
-
-.head h1::after {
-	content: ' ';
-	width: 100px;
-	height: 50px;
+	margin-inline: auto;
+	margin-bottom: 10px;
+	width: 550px;
+	height: 5px;
 	background-color: var(--high-light-color);
 }
 .head p {
@@ -332,15 +323,14 @@ li.highLights p {
 }
 
 footer {
-	height: 50px;
-	width: 100vw;
-
-	font-size: 1.7rem;
+	position: absolute;
+	font-size: 2rem;
 
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin-top: auto;
+	top: 90%;
+	right: 95%;
 }
 
 a {
