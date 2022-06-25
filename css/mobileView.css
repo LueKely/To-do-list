@@ -1,0 +1,52 @@
+@media only screen and (max-width: 900px) {
+	.head h1 {
+		font-size: 3rem;
+	}
+	.underLine {
+		width: 330px;
+	}
+	.head p {
+		font-size: 1.4rem;
+		margin-inline: 50px;
+	}
+
+	li {
+		width: 75vw;
+	}
+
+	ul > li {
+		font-size: 1.5rem;
+	}
+
+	.trashbin {
+		position: sticky;
+		left: 85%;
+	}
+
+	.deleteOption {
+		width: 80vw;
+	}
+	input[type='text'].deleteText {
+		width: 60vw;
+		font-size: 1.5rem;
+	}
+
+	footer {
+		width: 75px;
+		position: sticky;
+		left: 1%;
+		top: 90%;
+	}
+}
+@media only screen and (max-width: 500px) {
+	.checkbox__box {
+		width: 1.5rem;
+		height: 1.5rem;
+	}
+	.checkbox__box::after {
+		font-size: 0.95rem;
+	}
+	.errorHandlerModal {
+		width: 80vw;
+	}
+}

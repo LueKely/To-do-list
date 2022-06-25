@@ -30,6 +30,7 @@ h1 {
 }
 
 .head {
+	margin: 10px 5px 10px 5px;
 	position: relative;
 	display: flex;
 	align-items: center;
@@ -102,7 +103,7 @@ input[type='text'] {
 }
 .xmark {
 	align-self: flex-end;
-	margin: 10px 5px 10px 15px;
+	margin: 15px 5px 15px 15px;
 	color: var(--backgound-color);
 	font-size: 1.5rem;
 	transition: color 250ms ease-in-out;
