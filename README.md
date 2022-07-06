@@ -1,2 +1,2 @@
 # To-Do-List
-* it is a todo list
+* My attempts to making a list maker 
